@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CodeLearn - learn web development with clear tutorials and a live code editor.">
+  <title>CodeLearn — Learn to Code</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="CodeLearn home"><span class="brand-mark">&lt;/&gt;</span><span>Code<span class="brand-green">Learn</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <button class="nav-link active" data-course="HTML">HTML</button>
+      <button class="nav-link" data-course="CSS">CSS</button>
+      <button class="nav-link" data-course="JavaScript">JavaScript</button>
+      <button class="nav-link" data-course="Python">Python</button>
+      <button class="nav-link" data-course="SQL">SQL</button>
+    </nav>
+    <div class="top-actions">
+      <label class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search lessons..." aria-label="Search lessons"><kbd>⌘ K</kbd></label>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle dark mode">☾</button>
+      <button class="sign-in" id="signInBtn">Sign in</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-heading"><span id="sidebarCourse">HTML TUTORIAL</span><button id="closeSidebar" aria-label="Close sidebar">×</button></div>
+      <div class="progress-card">
+        <div class="progress-top"><span>Your progress</span><strong id="progressText">0%</strong></div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+        <small id="progressSub">0 of 8 lessons completed</small>
+      </div>
+      <div id="lessonNav" class="lesson-nav"></div>
+      <div class="sidebar-bottom"><span class="tiny-badge">LEARN BY DOING</span><p>Small steps. Real skills.</p></div>
+    </aside>
+
+    <main class="content">
+      <div class="mobile-coursebar">
+        <button id="mobileLessons">☰ Lessons</button>
+        <span id="mobileCourseName">HTML Tutorial</span>
+      </div>
+      <div class="breadcrumbs"><span>Courses</span><span>›</span><span id="crumbCourse">HTML</span><span>›</span><strong id="crumbLesson">Introduction</strong></div>
+      <section class="lesson-header">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> INTERACTIVE TUTORIAL</div>
+        <h1 id="lessonTitle">HTML Tutorial</h1>
+        <p id="lessonIntro">Learn HTML step by step, from your first webpage to useful page elements.</p>
+        <div class="lesson-controls">
+          <button class="primary-btn" id="prevBtn">← Previous</button>
+          <button class="primary-btn" id="nextBtn">Next lesson →</button>
+          <button class="complete-btn" id="completeBtn">✓ Mark as complete</button>
+        </div>
+      </section>
+
+      <section class="learning-card">
+        <div class="section-title-row"><div><span class="section-kicker">THE BASICS</span><h2 id="sectionHeading">What is HTML?</h2></div><span class="time-pill">◷ 5 min read</span></div>
+        <div id="lessonBody" class="lesson-body"></div>
+        <div class="tip-box"><span class="tip-icon">✦</span><div><strong>CodeLearn tip</strong><p>Try changing the example yourself. Learning by experimenting helps concepts stick.</p></div></div>
+      </section>
+
+      <section class="editor-card">
+        <div class="editor-heading"><div><span class="section-kicker">PRACTICE AREA</span><h2>Try it yourself</h2><p>Edit the code and run it to see the result.</p></div><span class="live-pill"><i></i> LIVE PREVIEW</span></div>
+        <div class="editor-toolbar"><span class="file-tab"><span class="file-dot"></span> index.html</span><div class="editor-actions"><button id="resetCode">↺ Reset</button><button id="runCode" class="run-btn">▶ Run code</button></div></div>
+        <div class="playground">
+          <div class="code-pane"><div class="pane-label">HTML EDITOR</div><textarea id="codeEditor" spellcheck="false" aria-label="HTML code editor"></textarea></div>
+          <div class="preview-pane"><div class="pane-label">OUTPUT PREVIEW</div><iframe id="preview" title="Code output" sandbox="allow-scripts"></iframe></div>
+        </div>
+      </section>
+
+      <section class="quiz-card">
+        <div class="quiz-top"><div><span class="section-kicker">QUICK CHECK</span><h2>Test your knowledge</h2><p>One quick question to check what you've learned.</p></div><span class="quiz-icon">?</span></div>
+        <div id="quizArea"></div>
+      </section>
+
+      <div class="bottom-nav"><button id="bottomPrev">← Previous</button><button id="bottomNext">Next lesson →</button></div>
+      <footer><a class="brand footer-brand" href="#"><span class="brand-mark">&lt;/&gt;</span>Code<span class="brand-green">Learn</span></a><span>Learn something new, every day.</span><span>© 2026 CodeLearn</span></footer>
+    </main>
+    <aside class="right-rail">
+      <div class="rail-card"><span class="rail-icon">✦</span><h3>Learning path</h3><p>Build your skills one lesson at a time. Complete lessons to track your progress.</p><div class="path-step done"><b>01</b><span>Start with the basics</span></div><div class="path-step"><b>02</b><span>Practice with examples</span></div><div class="path-step"><b>03</b><span>Build a mini project</span></div></div>
+      <div class="rail-card help-card"><span class="help-bubble">?</span><h3>Need a hand?</h3><p>Stuck on a concept? Re-read the example, then experiment in the editor.</p><a href="#editor">Go to code editor ↗</a></div>
+      <div class="quote-card">“The expert in anything was once a beginner.”<small>— Start where you are</small></div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="modalBackdrop"><div class="modal"><button class="modal-close" id="modalClose">×</button><div class="modal-mark">&lt;/&gt;</div><h2>Welcome to CodeLearn</h2><p>Sign-in is a demo in this starter project. Your lesson progress is saved on this device.</p><button class="primary-btn modal-ok" id="modalOk">Got it</button></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
